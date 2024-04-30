@@ -8,15 +8,6 @@ body:
     attributes:
       value: "For security vulnerabilities, please consult the GraalVM security policy and contact the security team directly."
 
-  - type: input
-    id: title
-    attributes:
-      label: Title
-      description: "Add a brief title that summarizes the native image issue"
-      placeholder: "Title"
-    validations:
-      required: true
-
   - type: textarea
     id: describe_issue
     attributes:
