@@ -55,18 +55,10 @@ body:
     attributes:
       label: GraalVM Version
       description: "Provide the version of GraalVM used."
-      placeholder: "GraalVM version here"
+      placeholder: "Output of `java -version` "
     validations:
       required: true
 
-  - type: input
-    id: java_version
-    attributes:
-      label: Java Version Used
-      description: "Output of `java -version` used alongside GraalVM."
-      placeholder: "Java version here"
-    validations:
-      required: true
 
   - type: input
     id: operating_system
