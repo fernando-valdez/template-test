@@ -8,6 +8,30 @@ body:
     attributes:
       value: "For security vulnerabilities, please consult the GraalVM security policy and contact the security team directly."
 
+  - type: markdown
+    attributes:
+      value: "Using the latest version of GraalVM can resolve many issues. Please confirm if you have tested with the latest available version."
+
+  - type: checkboxes
+    id: latest_version_check
+    attributes:
+      label: "Version Confirmation"
+      description: "Check the box if you tried with the latest version of GraalVM."
+      options:
+        - label: "I tried with the latest version of GraalVM."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: throw_missing_registration_errors
+    attributes:
+      label: "Diagnostic Flag Confirmation"
+      description: "Check the box if you tried the `-H:ThrowMissingRegistrationErrors` flag to catch metadata exceptions."
+      options:
+        - label: "I tried the `-H:ThrowMissingRegistrationErrors` flag."
+    validations:
+      required: false
+
   - type: textarea
     id: describe_issue
     attributes:
@@ -50,7 +74,6 @@ body:
     validations:
       required: true
 
-
   - type: input
     id: operating_system
     attributes:
@@ -72,7 +95,15 @@ body:
     id: log_output
     attributes:
       label: Log Output and Error Messages
-      description: "Include any relevant log outputs or error messages. You can also attach files with logs if necessary."
+      description: "Include any relevant log outputs or error messages."
       placeholder: "Paste logs or error messages here"
+    validations:
+      required: false
+
+  - type: file
+    id: attach_files
+    attributes:
+      label: Attach Files
+      description: "Attach any relevant files, such as logs, configurations, or screenshots."
     validations:
       required: false
