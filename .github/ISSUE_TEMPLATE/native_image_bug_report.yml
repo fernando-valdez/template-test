@@ -8,9 +8,26 @@ body:
     attributes:
       value: "For security vulnerabilities, please consult the GraalVM security policy and contact the security team directly."
 
+  - type: textarea
+    id: describe_issue
+    attributes:
+      label: Describe the Issue
+      description: "Describe the native image issue you are experiencing. Provide a clear and concise description of what happened and what you were trying to achieve."
+    validations:
+      required: true
+
   - type: markdown
     attributes:
       value: "Using the latest version of GraalVM can resolve many issues. Please confirm if you have tested with the latest available version."
+
+  - type: input
+    id: graalvm_version
+    attributes:
+      label: GraalVM Version
+      description: "Provide the version of GraalVM used."
+      placeholder: "Output of `java -version` "
+    validations:
+      required: true
 
   - type: checkboxes
     id: latest_version_check
@@ -29,14 +46,6 @@ body:
       description: "Check the box if you tried the `-H:ThrowMissingRegistrationErrors` flag to catch metadata exceptions."
       options:
         - label: "I tried the `-H:ThrowMissingRegistrationErrors` flag."
-    validations:
-      required: true
-
-  - type: textarea
-    id: describe_issue
-    attributes:
-      label: Describe the Issue
-      description: "Describe the native image issue you are experiencing. Provide a clear and concise description of what happened and what you were trying to achieve."
     validations:
       required: true
 
@@ -66,15 +75,6 @@ body:
       required: true
 
   - type: input
-    id: graalvm_version
-    attributes:
-      label: GraalVM Version
-      description: "Provide the version of GraalVM used."
-      placeholder: "Output of `java -version` "
-    validations:
-      required: true
-
-  - type: input
     id: operating_system
     attributes:
       label: Operating System and Version
@@ -95,7 +95,7 @@ body:
     id: log_output
     attributes:
       label: Log Output and Error Messages
-      description: "Include any relevant log outputs or error messages. Attach files by dragging and dropping them into the comment box below the issue form."
+      description: "Include any relevant log outputs or error messages. Attach files by selecting this field and then dragging and dropping them into the comment box below the issue form."
       placeholder: "Paste logs or error messages here"
     validations:
       required: false
