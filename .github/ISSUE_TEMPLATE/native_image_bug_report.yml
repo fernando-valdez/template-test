@@ -20,7 +20,7 @@ body:
       options:
         - label: "I tried with the latest version of GraalVM."
     validations:
-      required: false
+      required: true
 
   - type: checkboxes
     id: throw_missing_registration_errors
@@ -30,7 +30,7 @@ body:
       options:
         - label: "I tried the `-H:ThrowMissingRegistrationErrors` flag."
     validations:
-      required: false
+      required: true
 
   - type: textarea
     id: describe_issue
@@ -95,15 +95,7 @@ body:
     id: log_output
     attributes:
       label: Log Output and Error Messages
-      description: "Include any relevant log outputs or error messages."
+      description: "Include any relevant log outputs or error messages. Attach files by dragging and dropping them into the comment box below the issue form."
       placeholder: "Paste logs or error messages here"
-    validations:
-      required: false
-
-  - type: file
-    id: attach_files
-    attributes:
-      label: Attach Files
-      description: "Attach any relevant files, such as logs, configurations, or screenshots."
     validations:
       required: false
